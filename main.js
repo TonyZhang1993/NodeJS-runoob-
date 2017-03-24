@@ -19,7 +19,7 @@ greet(s);*/
 
 //exam 2
 // 引入 events 模块
-var events = require('events');
+/*var events = require('events');
 // 创建 eventEmitter 对象
 var eventEmitter = new events.EventEmitter();
 
@@ -38,4 +38,15 @@ eventEmitter.on('data_recv',function(){
 })
 // 触发 connection 事件 
 eventEmitter.emit('connection');
-console.log('程序执行完毕');
+console.log('程序执行完毕');*/
+
+//example 3 管道流
+var fs = require('fs');
+
+var readerStream = fs.createReadStream('input.txt');
+
+var writeStream = fs.createWriteStream('output.txt');
+
+readerStream.pipe(writeStream);
+
+console.log('finished');
